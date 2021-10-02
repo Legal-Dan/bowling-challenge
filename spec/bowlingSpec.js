@@ -32,4 +32,18 @@ describe("Bowling", function() {
     expect(bowling.frame).toEqual(2);
   })
 
+  it("after 10 frames the game will end and the frame and ball will be reset to 1", function() {
+    let bowling = new Bowling();
+    function repeat(n, times) {
+      let i = 0;
+      while (i < times) {
+        bowling.input_score(n);
+        i++;
+      }
+    }
+    repeat(3, 20);
+    expect(bowling.frame).toEqual(1);
+    expect(bowling.ball).toEqual(1);
+  })
+
 });
