@@ -23,6 +23,7 @@ class Bowling {
     else {
       this.frame = 1;
       this.total = 0;
+      this.past_score = []
     }
   }
 
@@ -32,7 +33,7 @@ class Bowling {
       this.total += score;
       this.update_frame();
     }
-    else if (this.past_score[19] + score == 10 && this.frame == 10) {
+    else if (this.past_score[19] + score == 10 && this.frame >= 10) {
       this.ball = 3;
       this.total += score;
     }
@@ -49,9 +50,14 @@ class Bowling {
   }
 
   calculate_strike(score) {
-    if (score == 10) {
+    if (score == 10 && this.frame == 10) {
+      this.total += score;
+      this.ball++;
+    }
+    else if (score == 10) {
       this.total += score;
       this.frame++;
+      this.past_score.push("-");
     }
     else {
       this.total += score;

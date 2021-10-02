@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('#total').innerText = bowling.total;
     document.querySelector('#frame').innerText = bowling.frame;
     document.querySelector('#ball').innerText = bowling.ball;
+    document.querySelector('#scores').innerText = bowling.past_score;
   }
 
   document.getElementById('score0').addEventListener("click", () => {
