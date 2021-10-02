@@ -10,7 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('#ball').innerText = bowling.ball;
   }
 
-document.getElementById('score1').addEventListener("click", () => {
+  document.getElementById('score0').addEventListener("click", () => {
+    bowling.input_score(0);
+    updateTotal(); 
+})
+
+  document.getElementById('score1').addEventListener("click", () => {
     bowling.input_score(1);
     updateTotal(); 
 })
